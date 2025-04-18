@@ -15,6 +15,11 @@ Typescript, React, Next.js, Chakra UI, Tanstack Query, React Hook Form, Axios, Z
 
 Todo se creo de forma tal que se pudiera presentar lo solicitado, lo cual se logro, sin dejar de lado que el desarrollo de este challenge para mi busca mostrar la forma en como se deberia abordar un proyecto usando buenas practicas, tratando de hacer buen uso del patron modular lo que conlleva una separarción clara de responsabilidades y mejora la mantenibilidad y reusabilidad de componentes y/o metodos/funciones, se tomo la decisión de usar Tanstack Query por que ya esta libreria tiene ciertos metodos para verificar el fetching y los estados del mismo, fuera de eso que maneja un cache por default que evita que se hagan llamados al back innecesarios y se pueden invalidar queries para actualizar las vistas en toda la aplicación (Son algunas de sus cualidades), se decidio usar React Hook Form + Yup porque estos facilita el manejo del estado de los formularios y sus validaciones, se uso Chakra UI (Por recomendación de la parte interesada) para facilitar la creación de los Layouts y la puesta a punto de algunos componentes como Botones, Inputs, etc, se uso Zustand para manejar el estado global de la Aplicación, las razones, super obvias, el boilerplate es menor, su mantenibilidad es mejor y carece de una abstracción complicada para la puesta a punto, se uso inicio de sesion con cookies porque asi no se pierde la sesion ni los datos si se actualiza la pagina web con F5, al menos que se borren los datos y el cache de la web.
 
+### Razones Claves para elegir el patrón modular
+Cada feature tiene su "módulo" autocontenido.
+Se mantiene la separación de responsabilidades: UI, lógica, estado y servicios.
+Facilita el escalado del proyecto.
+
 ### El patrón modular se traduce en organizar lógica por dominio o feature en módulos autocontenidos, que pueden incluir:
 Componentes (components/modules/feature) ✔️
 
@@ -29,11 +34,6 @@ Proveedores (providers/featureProviders.ts) ✔️
 Servicios o APIs (services/featureService) ✔️
 
 Tipos (types/featureTypes.ts) ✔️
-
-### Razones Claves para elegir el patrón modular
-Cada feature tiene su "módulo" autocontenido.
-Se mantiene la separación de responsabilidades: UI, lógica, estado y servicios.
-Facilita el escalado del proyecto.
 
 ### Ejemplo de scaffolding con el Patron Modular:
 ```bash
