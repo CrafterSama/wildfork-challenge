@@ -1,7 +1,9 @@
+import { describe, expect, test } from 'vitest';
+
 import { renderWithProviders } from '@/hoc/render-with-providers';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { describe, expect, test } from 'vitest';
+
 import LoginForm from './login-form';
 
 describe('Login Form', () => {

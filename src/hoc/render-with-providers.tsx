@@ -1,6 +1,7 @@
-import ChakraProviders from '@/providers/chakra-provider';
-import { render, RenderOptions } from '@testing-library/react';
 import { ReactElement } from 'react';
+
+import ChakraProviders from '@/providers/chakra-provider';
+import { RenderOptions, render } from '@testing-library/react';
 
 const renderWithProviders = (
   ui: ReactElement,

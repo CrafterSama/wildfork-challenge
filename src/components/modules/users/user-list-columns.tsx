@@ -1,6 +1,7 @@
+import Link from 'next/link';
+
 import { User } from '@/types/users';
 import { Button, Flex } from '@chakra-ui/react';
-import Link from 'next/link';
 
 export const columns = (deleteUser: (id: number) => void) => [
   {
@@ -38,7 +39,11 @@ export const columns = (deleteUser: (id: number) => void) => [
     accessor: (row: User) => row,
     cell: ({ id }: { id: number }) => (
       <Flex justifyContent="start">
-        <Button background="red.400" color="white" onClick={() => deleteUser(id)}>
+        <Button
+          background="red.400"
+          color="white"
+          onClick={() => deleteUser(id)}
+        >
           Eliminar
         </Button>
       </Flex>

@@ -1,10 +1,14 @@
 'use client';
 
+import { create, useStore } from 'zustand';
+
 import { ADMIN_USER } from '@/constants/common';
 import { AuthUser } from '@/types/common';
 import { User } from '@/types/users';
-import { removeSessionFromCookies, saveSessionToCookies } from '@/utils/auth-cookie';
-import { create, useStore } from 'zustand';
+import {
+  removeSessionFromCookies,
+  saveSessionToCookies,
+} from '@/utils/auth-cookie';
 
 type appStoreProps = {
   adminUser: {
@@ -22,7 +26,7 @@ type appStoreProps = {
   deleteUser: (id: number) => void;
 };
 
-const appStore = create<appStoreProps>(set => ({
+const appStore = create<appStoreProps>((set) => ({
   adminUser: ADMIN_USER,
   auth: {
     isAuthenticated: false,
@@ -32,7 +36,7 @@ const appStore = create<appStoreProps>(set => ({
         email: ADMIN_USER.email,
       };
       saveSessionToCookies({ user, isAuthenticated: true });
-      set(state => ({
+      set((state) => ({
         auth: {
           ...state.auth,
           isAuthenticated: true,
@@ -41,7 +45,7 @@ const appStore = create<appStoreProps>(set => ({
     },
     logout: () => {
       removeSessionFromCookies();
-      set(state => ({
+      set((state) => ({
         auth: {
           ...state.auth,
           isAuthenticated: false,
@@ -51,18 +55,18 @@ const appStore = create<appStoreProps>(set => ({
   },
   users: [],
   setUsers: (users: appStoreProps['users']) => {
-    set(state => ({
+    set((state) => ({
       users,
     }));
   },
   addUser: (user: appStoreProps['users'][0]) => {
-    set(state => ({
+    set((state) => ({
       users: [...state.users, user],
     }));
   },
   deleteUser: (id: number) => {
-    set(state => ({
-      users: state.users.filter(user => user.id !== id),
+    set((state) => ({
+      users: state.users.filter((user) => user.id !== id),
     }));
   },
 }));

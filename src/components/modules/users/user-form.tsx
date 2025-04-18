@@ -1,10 +1,12 @@
+import { useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+
 import { toaster } from '@/components/ui/toaster';
 import useAppStoreContext from '@/state-management/users-app-global-state';
 import { User, UserFormProps } from '@/types/users';
 import { Button, Field, Flex, Input, Stack } from '@chakra-ui/react';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useEffect } from 'react';
-import { useForm } from 'react-hook-form';
+
 import { UserSchema } from './user-form.schema';
 
 const UserForm = ({
@@ -89,7 +91,12 @@ const UserForm = ({
             <Field.ErrorText>{errors.phone?.message}</Field.ErrorText>
           </Field.Root>
           <Flex direction="column" gap="4" width="full">
-            <Button variant="outline" type="button" width="full" onClick={onCancel}>
+            <Button
+              variant="outline"
+              type="button"
+              width="full"
+              onClick={onCancel}
+            >
               Cancelar
             </Button>
             <Button type="submit" width="full">

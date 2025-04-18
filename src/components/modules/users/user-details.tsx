@@ -1,18 +1,25 @@
 'use client';
 
-import { Flex, Heading, Separator, Stack, Text } from '@chakra-ui/react';
 import { useParams } from 'next/navigation';
 
 import useAppStoreContext from '@/state-management/users-app-global-state';
+import { Flex, Heading, Separator, Stack, Text } from '@chakra-ui/react';
 
 const UserDetails = () => {
   const params = useParams();
   // const { data: userData } = useGetUser(params?.id as string | number);
   const { users } = useAppStoreContext();
-  const user = users.filter(user => user.id === Number(params?.id))[0];
+  const user = users.filter((user) => user.id === Number(params?.id))[0];
 
   return (
-    <Flex direction="column" gap={4} mt={4} w="full" justifyContent="center" alignItems="center">
+    <Flex
+      direction="column"
+      gap={4}
+      mt={4}
+      w="full"
+      justifyContent="center"
+      alignItems="center"
+    >
       <Heading size="3xl">Datos del usuario</Heading>
       <Flex
         direction="column"

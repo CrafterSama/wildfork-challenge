@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from 'react';
 
-import { Flex } from '@chakra-ui/react';
-
 import UserForm from '@/components/modules/users/user-form';
 import UserList from '@/components/modules/users/user-list';
 import { columns } from '@/components/modules/users/user-list-columns';
@@ -17,6 +15,7 @@ import { useGetUsers } from '@/hooks/api/use-get-users';
 import { useIsMobile } from '@/hooks/use-mobile';
 import useAppStoreContext from '@/state-management/users-app-global-state';
 import { User } from '@/types/users';
+import { Flex } from '@chakra-ui/react';
 
 const UsersPage = () => {
   const isMobile = useIsMobile();
@@ -38,7 +37,7 @@ const UsersPage = () => {
   const handleSearch = (value: string) => {
     setFilteredUsers(
       users.filter(
-        user =>
+        (user) =>
           user.name.toLowerCase().includes(value.toLowerCase()) ||
           user.email.toLowerCase().includes(value.toLowerCase()),
       ),

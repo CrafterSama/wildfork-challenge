@@ -1,5 +1,7 @@
 'use client';
 
+import { useForm } from 'react-hook-form';
+
 import { PasswordInput } from '@/components/ui/password-input';
 import { toaster } from '@/components/ui/toaster';
 import { ADMIN_USER } from '@/constants/common';
@@ -7,7 +9,7 @@ import useAppStoreContext from '@/state-management/users-app-global-state';
 import { LoginFormValues } from '@/types/common';
 import { Button, Field, Input, Stack } from '@chakra-ui/react';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useForm } from 'react-hook-form';
+
 import { LogInSchema } from './login.schema';
 
 const LoginForm = () => {

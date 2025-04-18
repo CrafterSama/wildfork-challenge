@@ -8,8 +8,16 @@ const UserListHeader = ({ onCreateUser }: { onCreateUser: () => void }) => {
       justifyContent={{ base: 'center', md: 'space-between' }}
       gap="2"
     >
-      <Flex direction="column" justifyContent={{ base: 'center', md: 'start' }} gap="2">
-        <Text fontSize="2xl" fontWeight="semibold" textAlign={{ base: 'center', md: 'left' }}>
+      <Flex
+        direction="column"
+        justifyContent={{ base: 'center', md: 'start' }}
+        gap="2"
+      >
+        <Text
+          fontSize="2xl"
+          fontWeight="semibold"
+          textAlign={{ base: 'center', md: 'left' }}
+        >
           Lista de Usuarios
         </Text>
         <Text

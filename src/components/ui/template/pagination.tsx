@@ -1,5 +1,6 @@
-import { Flex, IconButton } from '@chakra-ui/react';
 import { LuChevronLeft, LuChevronRight } from 'react-icons/lu';
+
+import { Flex, IconButton } from '@chakra-ui/react';
 
 type PaginationProps = {
   data: any[];
@@ -8,7 +9,12 @@ type PaginationProps = {
   totalPages: number;
 };
 
-const Pagination = ({ data, currentPage, setCurrentPage, totalPages }: PaginationProps) => {
+const Pagination = ({
+  data,
+  currentPage,
+  setCurrentPage,
+  totalPages,
+}: PaginationProps) => {
   return (
     <Flex
       width="full"
