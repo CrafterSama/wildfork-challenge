@@ -20,7 +20,7 @@ Hook(s) (hooks/useFeature) ✔️
 
 Constantes (constants/featureConstants.ts) ✔️
 
-Estado global o local (state-management/store/featureStore) ✔️
+Estado global o local (state-management/featureStore) ✔️
 
 Proveedores (providers/featureProviders.ts) ✔️
 
