@@ -21,7 +21,10 @@ const LoginForm = () => {
   });
 
   const onSubmit = (data: LoginFormValues) => {
-    if (data.email !== ADMIN_USER.email || data.password !== ADMIN_USER.password) {
+    if (
+      data.email !== ADMIN_USER.email ||
+      data.password !== ADMIN_USER.password
+    ) {
       toaster.create({
         title: 'Error',
         description: 'email o password inválidos',
@@ -42,16 +45,14 @@ const LoginForm = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Stack gap="4" align="flex-start" maxW="sm">
         <Field.Root invalid={!!errors.email}>
-          <Field.Label>Email</Field.Label>
-          <Input {...register('email')} />
+          <Input {...register('email')} placeholder="Email" />
           <Field.ErrorText>{errors.email?.message}</Field.ErrorText>
         </Field.Root>
         <Field.Root invalid={!!errors.password}>
-          <Field.Label>Password</Field.Label>
-          <PasswordInput {...register('password')} />
+          <PasswordInput {...register('password')} placeholder="Password" />
           <Field.ErrorText>{errors.password?.message}</Field.ErrorText>
         </Field.Root>
-        <Button type="submit" width="full">
+        <Button role="button" name="login" type="submit" width="full">
           Login
         </Button>
       </Stack>
