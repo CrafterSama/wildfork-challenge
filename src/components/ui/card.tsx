@@ -1,5 +1,5 @@
-import { Card as CardComponent } from "@chakra-ui/react";
-import React from "react";
+import { Card as CardComponent } from '@chakra-ui/react';
+import React from 'react';
 
 interface CardComponentProps {
   width?: string;

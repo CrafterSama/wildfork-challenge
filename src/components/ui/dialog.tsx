@@ -1,8 +1,4 @@
-import {
-  CloseButton,
-  Dialog as DialogComponent,
-  Portal,
-} from "@chakra-ui/react";
+import { CloseButton, Dialog as DialogComponent, Portal } from '@chakra-ui/react';
 
 const Dialog = ({
   open,

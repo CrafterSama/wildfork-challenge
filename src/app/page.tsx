@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { Center, Stack, Text } from "@chakra-ui/react";
+import { Center, Stack, Text } from '@chakra-ui/react';
 
-import LoginForm from "@/components/modules/auth/login-form";
-import Card from "@/components/ui/card";
+import LoginForm from '@/components/modules/auth/login-form';
+import Card from '@/components/ui/card';
 
 function Home() {
   return (

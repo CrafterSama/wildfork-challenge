@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
-import { useRouter } from "next/navigation";
+import { useRouter } from 'next/navigation';
 
-import useAppStoreContext from "@/state-management/users-app-global-state";
-import { useGetSessionFromCookies } from "@/utils/auth-cookie";
+import useAppStoreContext from '@/state-management/users-app-global-state';
+import { useGetSessionFromCookies } from '@/utils/auth-cookie';
 
 const AuthDirective = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
@@ -14,10 +14,11 @@ const AuthDirective = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      router.push("/users");
+      router.push('/users');
     } else {
-      router.push("/");
+      router.push('/');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated, auth]);
 
   return <>{children}</>;

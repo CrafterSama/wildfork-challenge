@@ -1,8 +1,8 @@
-import Card from "@/components/ui/card";
-import { EmptyState } from "@/components/ui/empty-state";
-import { User } from "@/types/users";
-import { AvatarIcon, Flex, Text } from "@chakra-ui/react";
-import Link from "next/link";
+import Card from '@/components/ui/card';
+import { EmptyState } from '@/components/ui/empty-state';
+import { User } from '@/types/users';
+import { AvatarIcon, Flex, Text } from '@chakra-ui/react';
+import Link from 'next/link';
 
 const UserList = ({ paginatedUsers }: { paginatedUsers: User[] }) => {
   return (
@@ -13,17 +13,12 @@ const UserList = ({ paginatedUsers }: { paginatedUsers: User[] }) => {
             key={user.id}
             width="full"
             header={
-              <Flex
-                direction="column"
-                justifyContent="center"
-                alignItems="center"
-                gap="2"
-              >
+              <Flex direction="column" justifyContent="center" alignItems="center" gap="2">
                 <Text fontSize="2xl" fontWeight="semibold" textAlign="center">
                   <Link
                     style={{
-                      cursor: "pointer",
-                      color: "magenta",
+                      cursor: 'pointer',
+                      color: 'magenta',
                     }}
                     href={`/users/${user.id}`}
                   >

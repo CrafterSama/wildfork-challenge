@@ -1,22 +1,22 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import { Flex } from "@chakra-ui/react";
+import { Flex } from '@chakra-ui/react';
 
-import UserForm from "@/components/modules/users/user-form";
-import UserList from "@/components/modules/users/user-list";
-import { columns } from "@/components/modules/users/user-list-columns";
-import UserListHeader from "@/components/modules/users/user-list-header";
-import UserListHeaderActions from "@/components/modules/users/user-list-header-actions";
-import Dialog from "@/components/ui/dialog";
-import Table from "@/components/ui/table";
-import Pagination from "@/components/ui/template/pagination";
-import { toaster } from "@/components/ui/toaster";
-import { useGetUsers } from "@/hooks/api/use-get-users";
-import { useIsMobile } from "@/hooks/use-mobile";
-import useAppStoreContext from "@/state-management/users-app-global-state";
-import { User } from "@/types/users";
+import UserForm from '@/components/modules/users/user-form';
+import UserList from '@/components/modules/users/user-list';
+import { columns } from '@/components/modules/users/user-list-columns';
+import UserListHeader from '@/components/modules/users/user-list-header';
+import UserListHeaderActions from '@/components/modules/users/user-list-header-actions';
+import Dialog from '@/components/ui/dialog';
+import Table from '@/components/ui/table';
+import Pagination from '@/components/ui/template/pagination';
+import { toaster } from '@/components/ui/toaster';
+import { useGetUsers } from '@/hooks/api/use-get-users';
+import { useIsMobile } from '@/hooks/use-mobile';
+import useAppStoreContext from '@/state-management/users-app-global-state';
+import { User } from '@/types/users';
 
 const UsersPage = () => {
   const isMobile = useIsMobile();
@@ -32,16 +32,16 @@ const UsersPage = () => {
   const totalPages = Math.ceil(users.length / itemsPerPage);
   const paginatedUsers: User[] = filteredUsers.slice(
     (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
+    currentPage * itemsPerPage,
   );
 
   const handleSearch = (value: string) => {
     setFilteredUsers(
       users.filter(
-        (user) =>
+        user =>
           user.name.toLowerCase().includes(value.toLowerCase()) ||
-          user.email.toLowerCase().includes(value.toLowerCase())
-      )
+          user.email.toLowerCase().includes(value.toLowerCase()),
+      ),
     );
   };
 
@@ -57,9 +57,9 @@ const UsersPage = () => {
     deleteUser(id);
     setCurrentPage(1);
     toaster.create({
-      title: "Success",
-      description: "Usuario eliminado exitosamente",
-      type: "success",
+      title: 'Success',
+      description: 'Usuario eliminado exitosamente',
+      type: 'success',
     });
   };
 
@@ -67,6 +67,7 @@ const UsersPage = () => {
     if (usersData?.length >= 1 && usersData.length > users.length) {
       setUsers(usersData);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [usersData]);
 
   useEffect(() => {
@@ -80,7 +81,7 @@ const UsersPage = () => {
       alignItems="center"
       w="full"
       h="screen"
-      padding={{ base: "4", md: "8" }}
+      padding={{ base: '4', md: '8' }}
     >
       <Dialog
         open={isOpenUserForm}

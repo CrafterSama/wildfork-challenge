@@ -13,4 +13,4 @@ export interface authSession {
   isAuthenticated: boolean;
 }
 
-export const COOKIE_KEY = "auth_user";
+export const COOKIE_KEY = 'auth_user';

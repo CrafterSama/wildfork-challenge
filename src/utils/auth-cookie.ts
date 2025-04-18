@@ -1,6 +1,6 @@
-import Cookies from "js-cookie";
+import Cookies from 'js-cookie';
 
-import { COOKIE_KEY, authSession } from "@/types/common";
+import { COOKIE_KEY, authSession } from '@/types/common';
 
 export const saveSessionToCookies = (session: authSession) => {
   Cookies.set(COOKIE_KEY, JSON.stringify(session), { expires: 7 }); // 7 días

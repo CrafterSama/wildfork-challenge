@@ -1,16 +1,16 @@
-import { User } from "@/types/users";
-import { Button, Flex } from "@chakra-ui/react";
-import Link from "next/link";
+import { User } from '@/types/users';
+import { Button, Flex } from '@chakra-ui/react';
+import Link from 'next/link';
 
 export const columns = (deleteUser: (id: number) => void) => [
   {
-    name: "Nombre",
+    name: 'Nombre',
     accessor: (row: User) => row,
     cell: ({ id, name }: { id: number | string; name: string }) => (
       <Link
         style={{
-          cursor: "pointer",
-          color: "magenta",
+          cursor: 'pointer',
+          color: 'magenta',
         }}
         href={`/users/${id}`}
       >
@@ -19,30 +19,26 @@ export const columns = (deleteUser: (id: number) => void) => [
     ),
   },
   {
-    name: "Usuario",
+    name: 'Usuario',
     accessor: (row: User) => row,
     cell: ({ username }: { username: string }) => <span>{username}</span>,
   },
   {
-    name: "Email",
+    name: 'Email',
     accessor: (row: User) => row,
     cell: ({ email }: { email: string }) => <span>{email}</span>,
   },
   {
-    name: "Teléfono",
+    name: 'Teléfono',
     accessor: (row: User) => row,
     cell: ({ phone }: { phone: string }) => <span>{phone}</span>,
   },
   {
-    name: "Acciones",
+    name: 'Acciones',
     accessor: (row: User) => row,
     cell: ({ id }: { id: number }) => (
       <Flex justifyContent="start">
-        <Button
-          background="red.400"
-          color="white"
-          onClick={() => deleteUser(id)}
-        >
+        <Button background="red.400" color="white" onClick={() => deleteUser(id)}>
           Eliminar
         </Button>
       </Flex>

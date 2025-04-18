@@ -31,10 +31,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ReactQueryProvider>
-          <ChakraProviders>
-            <Toaster />
-            <AuthDirective>{children}</AuthDirective>
-          </ChakraProviders>
+          <AuthDirective>
+            <ChakraProviders>
+              <Toaster />
+              {children}
+            </ChakraProviders>
+          </AuthDirective>
         </ReactQueryProvider>
       </body>
     </html>

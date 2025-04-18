@@ -1,30 +1,22 @@
-import { Button, Flex, Text } from "@chakra-ui/react";
+import { Button, Flex, Text } from '@chakra-ui/react';
 
 const UserListHeader = ({ onCreateUser }: { onCreateUser: () => void }) => {
   return (
     <Flex
       w="full"
-      direction={{ base: "column", md: "row" }}
-      justifyContent={{ base: "center", md: "space-between" }}
+      direction={{ base: 'column', md: 'row' }}
+      justifyContent={{ base: 'center', md: 'space-between' }}
       gap="2"
     >
-      <Flex
-        direction="column"
-        justifyContent={{ base: "center", md: "start" }}
-        gap="2"
-      >
-        <Text
-          fontSize="2xl"
-          fontWeight="semibold"
-          textAlign={{ base: "center", md: "left" }}
-        >
+      <Flex direction="column" justifyContent={{ base: 'center', md: 'start' }} gap="2">
+        <Text fontSize="2xl" fontWeight="semibold" textAlign={{ base: 'center', md: 'left' }}>
           Lista de Usuarios
         </Text>
         <Text
           fontSize="sm"
           textAlign={{
-            base: "center",
-            md: "left",
+            base: 'center',
+            md: 'left',
           }}
         >
           Crea, Busca y Elimina Usuarios
@@ -32,8 +24,8 @@ const UserListHeader = ({ onCreateUser }: { onCreateUser: () => void }) => {
       </Flex>
       <Flex
         direction={{
-          base: "column",
-          md: "row",
+          base: 'column',
+          md: 'row',
         }}
         justifyContent="start"
         gap="2"

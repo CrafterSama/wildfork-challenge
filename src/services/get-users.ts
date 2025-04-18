@@ -1,15 +1,15 @@
-import { toaster } from "@/components/ui/toaster";
-import { api } from "@/utils/api";
+import { toaster } from '@/components/ui/toaster';
+import { api } from '@/utils/api';
 
 export const getUsers = async () => {
   try {
-    const { data } = await api.get("/users");
+    const { data } = await api.get('/users');
     return data;
   } catch (error) {
     toaster.create({
-      title: "Error",
-      description: "Error al obtener los usuarios",
-      type: "error",
+      title: 'Error',
+      description: 'Error al obtener los usuarios',
+      type: 'error',
     });
     return [];
   }
@@ -21,9 +21,9 @@ export const getUser = async (id: string | number) => {
     return data;
   } catch (error) {
     toaster.create({
-      title: "Error",
-      description: "Error al obtener los datos del usuario",
-      type: "error",
+      title: 'Error',
+      description: 'Error al obtener los datos del usuario',
+      type: 'error',
     });
     return [];
   }
