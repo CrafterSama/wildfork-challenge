@@ -15,11 +15,17 @@ Todo se creo de forma tal que se pudiera presentar lo solicitado, lo cual se log
 
 ### El patrón modular se traduce en organizar lógica por dominio o feature en módulos autocontenidos, que pueden incluir:
 Componentes (components/modules/feature) ✔️
+
 Hook(s) (hooks/useFeature) ✔️
+
 Constantes (constants/featureConstants.ts) ✔️
+
 Estado global o local (state-management/store/featureStore) ✔️
+
 Proveedores (providers/featureProviders.ts) ✔️
+
 Servicios o APIs (services/featureService) ✔️
+
 Tipos (types/featureTypes.ts) ✔️
 
 ### Razones Claves para elegir el patrón modular
